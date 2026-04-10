@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 100 7% 96%;
+    --foreground: 207 27% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 207 27% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 207 27% 16%;
+
+    --primary: 152 45% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 249 68% 66%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 14% 90%;
+    --muted-foreground: 212 10% 39%;
+
+    --accent: 249 68% 66%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 14% 90%;
+    --input: 210 14% 90%;
+    --ring: 152 45% 34%;
+
+    --radius: 0.75rem;
+
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+
+    --shadow-soft: 0 4px 24px -4px hsl(207 27% 16% / 0.06);
+    --shadow-lifted: 0 12px 40px -8px hsl(249 68% 66% / 0.18), 0 4px 16px -4px hsl(207 27% 16% / 0.1);
+  }
+
+  .dark {
+    --background: 153 22% 7%;
+    --foreground: 210 12% 91%;
+    --card: 150 15% 10%;
+    --card-foreground: 210 12% 91%;
+    --popover: 150 15% 10%;
+    --popover-foreground: 210 12% 91%;
+    --primary: 152 45% 45%;
+    --primary-foreground: 153 22% 7%;
+    --secondary: 249 100% 77%;
+    --secondary-foreground: 153 22% 7%;
+    --muted: 152 12% 17%;
+    --muted-foreground: 210 8% 64%;
+    --accent: 249 100% 77%;
+    --accent-foreground: 153 22% 7%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 152 12% 17%;
+    --input: 152 12% 17%;
+    --ring: 152 45% 45%;
+    --shadow-soft: 0 4px 24px -4px hsl(0 0% 0% / 0.25);
+    --shadow-lifted: 0 12px 40px -8px hsl(249 100% 77% / 0.25), 0 4px 16px -4px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
