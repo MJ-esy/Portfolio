@@ -49,6 +49,11 @@ export interface CVDownload {
   href: string;
 }
 
+export interface SkillGroup {
+  category: string;
+  items: string[];
+}
+
 // ─── Content ──────────────────────────────────────────────────────────────────
 
 export const cv = {
@@ -185,16 +190,72 @@ export const cv = {
     { language: "Malay", proficiency: "Conversational" },
   ] as LanguageItem[],
 
-  // Skills
+  // Skills — grouped to mirror the CV's Technical Skills section
   skills: [
-    "C#",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "SQL",
-    "Notion",
-    "Git & GitHub & GitLab",
-  ] as string[],
+    {
+      category: "Languages",
+      items: ["C#", "Python", "JavaScript", "TypeScript", "SQL", "HTML", "CSS", "Bash"],
+    },
+    {
+      category: "Backend",
+      items: [
+        "ASP.NET Core (MVC & Web API)",
+        ".NET 8/9/10",
+        "Entity Framework Core",
+        "FastAPI",
+        "JWT Authentication",
+        "WebSocket",
+      ],
+    },
+    {
+      category: "Frontend",
+      items: [
+        "React",
+        "Tailwind CSS",
+        "DaisyUI",
+        "Bootstrap",
+        "React Leaflet",
+        "Vite",
+        "Node.js",
+        "npm",
+        "Razor",
+      ],
+    },
+    {
+      category: "DevOps & Infrastructure",
+      items: ["Docker", "Docker Compose", "Git", "GitHub", "Linux", "Microservice architecture"],
+    },
+    {
+      category: "Databases & Cloud",
+      items: [
+        "SQL Server",
+        "PostgreSQL",
+        "Supabase",
+        "Azure SQL Database",
+        "Azure App Service",
+        "Azure OpenAI (GPT-4o)",
+        "Vercel",
+      ],
+    },
+    {
+      category: "Tools",
+      items: [
+        "Visual Studio 2022/2026",
+        "Visual Studio Code",
+        "SSMS",
+        "Postman",
+        "Swagger / OpenAPI",
+        "GitHub Actions (CI/CD)",
+        "Figma",
+      ],
+    },
+    {
+      category: "Practices",
+      items: ["Agile", "RESTful API design", "MVC", "CI/CD", "Code versioning", "WCAG"],
+    },
+    {
+      category: "Productivity",
+      items: ["Google Workspace", "GitHub Projects", "Notion", "Trello"],
+    },
+  ] as SkillGroup[],
 };

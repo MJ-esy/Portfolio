@@ -79,18 +79,27 @@ const Resume = () => {
             {resolveIcon("code", { size: 20, className: "text-primary" })}
             <h3 className="font-heading text-xl font-semibold text-foreground">Skills</h3>
           </div>
-          <div className="flex flex-wrap gap-2.5">
-            {cv.skills.map((skill, i) => (
-              <motion.span
-                key={skill}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.04 }}
-                className="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium text-foreground shadow-soft hover:shadow-lifted hover:border-secondary/40 hover:text-secondary transition-all cursor-default"
-              >
-                {skill}
-              </motion.span>
+          <div className="space-y-6">
+            {cv.skills.map((group) => (
+              <div key={group.category}>
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                  {group.category}
+                </h4>
+                <div className="flex flex-wrap gap-2.5">
+                  {group.items.map((item, i) => (
+                    <motion.span
+                      key={item}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: i * 0.04 }}
+                      className="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium text-foreground shadow-soft hover:shadow-lifted hover:border-secondary/40 hover:text-secondary transition-all cursor-default"
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </motion.div>
